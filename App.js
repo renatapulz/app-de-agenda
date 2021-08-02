@@ -1,21 +1,55 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from "react-native"
+import { NavigationContainer } from '@react-navigation/native';
+import Home from './componentes/Home'; 
+import Contatos from './componentes/Contatos';
+import Cadastrar from './componentes/Cadastrar';
+
+//importando a navegacao:
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+const Tab = createMaterialTopTabNavigator();
+
+function MyTabs() {
+  return (
+    <Tab.Navigator style={styles.container}
+      initialRouteName="Home"
+      screenOptions={{
+        tabBarActiveTintColor: '#DFF6F0',
+        tabBarLabelStyle: { fontSize: 16 },
+        tabBarStyle: { backgroundColor: '#2E279D' },
+      }}
+    >
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{ tabBarLabel: 'Home' }}
+      />
+      <Tab.Screen
+        name="Contatos"
+        component={Contatos}
+        options={{ tabBarLabel: 'Contatos' }}
+      />
+      <Tab.Screen
+        name="Cadastrar"
+        component={Cadastrar}
+        options={{ tabBarLabel: 'Cadastrar' }}
+      />
+    </Tab.Navigator>
+  );
+}
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <MyTabs />
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 40,
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  }
 });
