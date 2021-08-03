@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { Button, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, ScrollView, StyleSheet, Text, TextInput, View, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
 
 import { firebaseDB } from '../firebase';
 import Footer from './Footer';
@@ -24,7 +24,7 @@ export default function Cadastro() {
   }
 
   return (
-    <View>
+    <KeyboardAvoidingView behavior="padding">
       <ScrollView>
       <Text style={styles.titulo}>Cadatrar Contato:</Text>
 
@@ -63,15 +63,19 @@ export default function Cadastro() {
         onChangeText={valor => setContato({...contato, telefone: {...contato.telefone, celular: valor}})}
       />
 
-      <Button title= "Adicionar"
-        onPress={() => {
-          adicionar()
-        }}
-      />
+      <TouchableOpacity style={styles.buttom} 
+          onPress={() => {
+            adicionar()
+        }}>
+        <Text style={styles.textbuttom}>
+          Adicionar
+        </Text>
+      </TouchableOpacity>
+
       <Footer/>
       <StatusBar style="auto" />
       </ScrollView>
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 
@@ -91,7 +95,7 @@ const styles = StyleSheet.create({
     borderColor: "#46B3E6",
     marginBottom: 15,
     marginTop:5,
-    padding: 2,
+    padding: 10,
     borderRadius:8,
     
   },
@@ -104,7 +108,7 @@ const styles = StyleSheet.create({
     borderRadius:8,
     marginBottom: 30,
     marginTop:5,
-    padding: 2,
+    padding: 10,
     
   },
   titulo:{
@@ -116,6 +120,24 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight:"bold",
     padding:20,
+},
+
+buttom: {  
+  backgroundColor: "#46B3E6",
+  marginBottom: 20,
+  padding: 10,
+  borderRadius: 8,
+  borderWidth: 1,
+  borderColor:"#1b98e0",
+  width: 150,
+  alignItems: "center",
+  alignSelf:"center",
+},
+
+textbuttom:{
+  color: "#DFF6F0",
+  fontSize: 20,
+  fontWeight: "bold",
 }
 
   });
