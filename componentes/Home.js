@@ -2,12 +2,14 @@ import React from "react"
 import { View, Text, StyleSheet } from "react-native"
 import Footer from "./Footer"
 import Header from "./Header"
+import Slider from "./Slider"
 
 
 export default function Home(){
     return(
         <View>
           <Header/>
+          <Slider/>
             <Text style={styles.conteudo}>Seja bem vindo!</Text>
             <Text style={styles.conteudo2}>App em construção!</Text>
           <Footer/>  
@@ -19,7 +21,7 @@ export default function Home(){
 const styles = StyleSheet.create({
 conteudo: {
   marginHorizontal: 10,
-  marginVertical:40,
+  marginVertical:10,
   textAlign: "center",
   fontSize: 20,
   fontWeight: "400",
@@ -27,8 +29,8 @@ conteudo: {
 
 conteudo2:{
   marginHorizontal: 10,
-  marginTop:50,
-  marginBottom:300,
+  marginTop:20,
+  marginBottom:60,
   textAlign: "center",
   fontSize: 20,
   fontWeight: "400",

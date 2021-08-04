@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   rodape:{
       backgroundColor:"#4D80E4",
       width:"100%",
-      marginTop:40
+      
   },
 
   textofooter: {
@@ -25,6 +25,6 @@ const styles = StyleSheet.create({
       color: "#DFF6F0",
       fontSize: 18,
       fontWeight:"bold",
-      marginVertical: 15,
+      marginVertical: 20,
   }
   });
