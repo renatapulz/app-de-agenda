@@ -2,6 +2,7 @@ import React from "react"
 import { View, Text, StyleSheet } from "react-native"
 import Footer from "./Footer"
 import Header from "./Header"
+import Login from "./Login"
 import Slider from "./Slider"
 
 
@@ -12,6 +13,7 @@ export default function Home(){
           <Slider/>
             <Text style={styles.conteudo}>Seja bem vindo!</Text>
             <Text style={styles.conteudo2}>App em construção!</Text>
+          <Login/>
           <Footer/>  
         </View>
     )
