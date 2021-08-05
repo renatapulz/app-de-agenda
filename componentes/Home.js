@@ -1,16 +1,18 @@
 import React from "react"
-import { KeyboardAvoidingView, Text, StyleSheet, ScrollView } from "react-native"
+import { KeyboardAvoidingView, Text, StyleSheet, ScrollView, Platform } from "react-native"
 import Footer from "./Footer"
 import Header from "./Header"
+import LinkWhats from "./LinkWhats"
 import Slider from "./Slider"
 
 
 export default function Home(){
     return(
-      <KeyboardAvoidingView behavior="padding">
+      <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"}>
           <ScrollView>
             <Header/>
             <Slider/>
+            <LinkWhats/>
               <Text style={styles.conteudo}>Seja bem vindo!</Text>
               <Text style={styles.conteudo2}>App em construção!</Text>
             <Footer/>

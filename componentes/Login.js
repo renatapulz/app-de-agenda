@@ -5,6 +5,8 @@ import { firebaseDB } from '../firebase';
 
 
 export default function Login(){
+
+  //criado para mudar fazer aparecer a senha, quando o usario aperta no olhinho
   const[visible, setVisible] = useState('');
   const [aparecer, setAparecer] = useState(true);
 

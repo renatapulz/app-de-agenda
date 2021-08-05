@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
-import { Button, ScrollView, StyleSheet, Text, TextInput, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
+import { Button, ScrollView, StyleSheet, Text, TextInput, KeyboardAvoidingView, TouchableOpacity, Platform } from 'react-native';
 
 import { firebaseDB } from '../firebase';
 import Footer from './Footer';
@@ -24,7 +24,7 @@ export default function Cadastro() {
   }
 
   return (
-    <KeyboardAvoidingView behavior="padding">
+    <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"}>
       <ScrollView>
       <Text style={styles.titulo}>Cadatrar Contato:</Text>
 
