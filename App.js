@@ -7,6 +7,7 @@ import Cadastrar from './componentes/Cadastrar';
 
 //importando a navegacao:
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import Login from './componentes/Login';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -16,7 +17,7 @@ function MyTabs() {
       initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: '#DFF6F0',
-        tabBarLabelStyle: { fontSize: 16 },
+        tabBarLabelStyle: { fontSize: 10, fontWeight: "bold", },
         tabBarStyle: { backgroundColor: '#2E279D' },
       }}
     >
@@ -34,6 +35,11 @@ function MyTabs() {
         name="Cadastrar"
         component={Cadastrar}
         options={{ tabBarLabel: 'Cadastrar' }}
+      />
+      <Tab.Screen
+        name="Login"
+        component={Login}
+        options={{ tabBarLabel: 'Login' }}
       />
     </Tab.Navigator>
   );

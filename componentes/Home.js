@@ -1,21 +1,21 @@
 import React from "react"
-import { View, Text, StyleSheet } from "react-native"
+import { KeyboardAvoidingView, Text, StyleSheet, ScrollView } from "react-native"
 import Footer from "./Footer"
 import Header from "./Header"
-import Login from "./Login"
 import Slider from "./Slider"
 
 
 export default function Home(){
     return(
-        <View>
-          <Header/>
-          <Slider/>
-            <Text style={styles.conteudo}>Seja bem vindo!</Text>
-            <Text style={styles.conteudo2}>App em construção!</Text>
-          <Login/>
-          <Footer/>  
-        </View>
+      <KeyboardAvoidingView behavior="padding">
+          <ScrollView>
+            <Header/>
+            <Slider/>
+              <Text style={styles.conteudo}>Seja bem vindo!</Text>
+              <Text style={styles.conteudo2}>App em construção!</Text>
+            <Footer/>
+          </ScrollView>   
+      </KeyboardAvoidingView>
     )
 }
 
